@@ -30,7 +30,8 @@
     "start:dev": "lerna run start:dev -- -r .env",
     "clean": "rm -rf ./packages/**/tsconfig.tsbuildinfo && rm -rf node_modules/.cache && lerna run clean",
     "lint": "lerna run lint --parallel",
-    "test": "lerna run test --parallel"
+    "test": "lerna run test --parallel",
+    "lint-staged": "lint-staged"
   },
   "settings": {
     "rootProject.name": "lerna-express-starter"
@@ -44,10 +45,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,json}": [
+    "*.{js,ts,json}": [
       "eslint --fix"
     ],
-    "src/**/*.{js,ts,json,md}": [
+    "*.{js,ts,json,md}": [
       "prettier --write"
     ]
   }
