@@ -1,0 +1,26 @@
+{
+  "name": "@lerna-express-starter/auth",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": {
+    "name": "James Hong",
+    "url": "https://jamesyjhong.com"
+  },
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/auth.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "yarn lint && yarn compile && yarn test",
+    "compile": "tsc -b",
+    "clean": "rm -rf lib && rm -rf node_modules/.cache",
+    "lint": "eslint . --ignore-path ../../.eslintignore --ext .ts src/**",
+    "test": "echo TODO TESTS"
+  }
+}

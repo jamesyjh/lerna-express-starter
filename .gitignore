@@ -1,0 +1,13 @@
+node_modules
+*.env
+lib
+api
+coverage
+
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log
+yarn-error.log*
+temp
+
+tsconfig.tsbuildinfo
