@@ -30,8 +30,7 @@
     "start:dev": "lerna run start:dev -- -r .env",
     "clean": "rm -rf ./packages/**/tsconfig.tsbuildinfo && rm -rf node_modules/.cache && lerna run clean",
     "lint": "lerna run lint --parallel",
-    "test": "lerna run test --parallel",
-    "lint-staged": "lint-staged"
+    "test": "lerna run test --parallel"
   },
   "settings": {
     "rootProject.name": "lerna-express-starter"
@@ -39,11 +38,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,ts,json}": [
       "eslint --quiet --fix"
