@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 const authHeaderRouter = express.Router();
-const port = process.env.PORT;
+const port = process.env.PORT || 2000;
 
 authHeaderRouter.use(authMiddleware);
 
