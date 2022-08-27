@@ -1,0 +1,40 @@
+{
+  "name": "@lerna-express-starter/logger",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": {
+    "name": "James Hong",
+    "url": "https://jamesyjhong.com"
+  },
+  "homepage": "https://github.com/jamesyjh/lerna-express-starter#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesyjh/lerna-exrpess-starter.git"
+  },
+  "scripts": {
+    "build": "yarn lint && yarn compile && yarn test",
+    "lint": "eslint . --ignore-path ../../.eslintignore --ext .ts src/**",
+    "compile": "tsc -b",
+    "test": "echo TODO TESTS"
+  },
+  "bugs": {
+    "url": "https://github.com/jamesyjh/lerna-exrpess-starter/issues"
+  },
+  "dependencies": {
+    "@types/morgan": "^1.9.3",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}
