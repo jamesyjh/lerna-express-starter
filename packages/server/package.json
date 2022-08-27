@@ -9,10 +9,10 @@
   },
   "homepage": "",
   "license": "ISC",
-  "main": "lib/server.js",
+  "main": "./api/index.js",
   "directories": {
     "lib": "lib",
-    "test": "__tests__"
+    "test": "test"
   },
   "files": [
     "lib"
@@ -21,13 +21,14 @@
     "start": "node ./api/index.js",
     "start:dev": "nodemon ./src/index.ts",
     "build": "yarn lint && yarn compile && yarn test",
-    "clean": "rm -rf api && rm -rf node_modules/.cache",
+    "clean": "rm -rf api node_modules/.cache coverage .nyc_output",
     "compile": "tsc -b",
     "postcompile": "cp -R ./src/openapi.yaml ./api",
     "lint": "eslint . --ignore-path ../../.eslintignore --ext .ts src/**",
-    "test": "nyc mocha --exit \"test/**/*.spec.ts\" -r ts-node/register/transpile-only -r source-map-support/register -R min"
+    "test": "nyc mocha --exit \"test/**/*.spec.ts\" -r ts-node/register/transpile-only"
   },
   "devDependencies": {
+    "@lerna-express-starter/logger": "0.0.0",
     "@types/chai": "^4.3.3",
     "@types/express": "^4.17.13",
     "@types/mocha": "^9.1.1",
@@ -43,10 +44,34 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@lerna-express-starter/logger": "0.0.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "swagger-ui-express": "^4.5.0",
     "yamljs": "^0.3.0"
+  },
+  "nyc": {
+    "all": true,
+    "cache": true,
+    "cache-dir": "../../node_modules/.cache/nyc",
+    "temp-dir": "../../.nyc_output",
+    "check-coverage": true,
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/types.ts",
+      "src/index.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "lines": 0,
+    "branches": 0,
+    "functions": 0,
+    "statements": 0
   }
 }
