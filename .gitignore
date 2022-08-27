@@ -5,7 +5,9 @@ node_modules
 lib
 api
 
+# Test Output
 coverage
+.nyc_output
 
 # Log files
 logs

@@ -6,6 +6,7 @@
     "name": "James Hong",
     "url": "https://jamesyjhong.com"
   },
+  "private": true,
   "homepage": "https://github.com/jamesyjh/lerna-express-starter#readme",
   "license": "ISC",
   "main": "lib/index.js",
@@ -31,10 +32,44 @@
   },
   "dependencies": {
     "@types/morgan": "^1.9.3",
+    "dotenv": "^16.0.1",
     "morgan": "^1.10.0",
     "winston": "^3.8.1"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/sinon": "^10.0.13",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
+  },
+  "nyc": {
+    "all": true,
+    "cache": true,
+    "cache-dir": "../../node_modules/.cache/nyc",
+    "temp-dir": "../../.nyc_output",
+    "check-coverage": true,
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/types.ts",
+      "src/index.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "lines": 100,
+    "branches": 100,
+    "functions": 100,
+    "statements": 100
   }
 }
