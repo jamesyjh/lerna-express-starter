@@ -1,0 +1,10 @@
+openapi: 3.0.3
+info:
+  title: <Lerna-Express-Starter> API
+  version: 1.0.0
+  description: <Description for API>
+  contact:
+    name: James Hong
+    url: https://jamesyjhong.com
+servers:
+  - url: localhost

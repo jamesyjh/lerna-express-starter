@@ -17,6 +17,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-yaml": "^0.5.0",
     "find-up": "^6.3.0",
     "husky": "^8.0.1",
     "lerna": "^5.3.0",
@@ -27,7 +28,7 @@
   "scripts": {
     "bootstrap": "lerna bootstarp --use-workspaces",
     "build": "lerna run build --parallel",
-    "start:dev": "lerna run start:dev -- -r .env",
+    "start:dev": "lerna run start:dev --stream -- -r .env",
     "clean": "rm -rf ./packages/**/tsconfig.tsbuildinfo && rm -rf node_modules/.cache && lerna run clean",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test --parallel"
