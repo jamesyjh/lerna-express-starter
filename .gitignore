@@ -1,13 +1,17 @@
 node_modules
+
 *.env
+# Output
 lib
 api
+
 coverage
 
+# Log files
+logs
 npm-debug.log*
 yarn-debug.log*
 lerna-debug.log
 yarn-error.log*
-temp
 
 tsconfig.tsbuildinfo
